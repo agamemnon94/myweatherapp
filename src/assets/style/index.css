@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+:root {
+  --corail: rgb(232, 49, 81);
+  --dark: #0c0c0c;
+  --light_dark: #000000bb;
+  --grey: rgb(42, 42, 42);
+  --white: #ebebeb;
+
+  /* fonts */
+  --title: "Rubik", sans-serif;
+  --sub_title: "Podkova", serif;
+  --text: "Montserrat", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  background: #000;
+}
+body::-webkit-scrollbar {
+  width: 1.5rem; /* largeur de la scrollbar */
+}
+body::-webkit-scrollbar-track {
+  /* color of the tracking area */
+  background: var(--dark);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--corail); /* color of the scroll thumb */
+  border-radius: 1px; /* roundness of the scroll thumb */
+  border: 0.4rem solid var(--dark); /* creates padding around scroll thumb */
+}
+body::-webkit-scrollbar-corner {
+  /* Coin de la fenêtre */
+  background: var(--dark);
+}
+
+.black {
+  background: #111 !important;
+}
+
+h1 {
+  color: var(--corail);
+  font-size: clamp(3rem, 5vw, 5rem);
+  text-align: center;
+}
+
+.title_logo {
+  width: clamp(50px, 5vw, 80px);
+}
+
+h1 span {
+  font-family: var(--title);
+  color: rgb(4, 172, 244);
+}
+
+#page {
+  min-height: calc(100vh - 50px);
+  /* background: green; */
+  padding-top: 50px;
+}
+.footer_p {
+  text-align: center;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--dark);
+  /* background: grey; */
+}
+.footer_p a {
+  font-family: var(--sub_title);
+  color: var(--corail);
+}
+/*************************/
+/** Weather Backgrounds **/
+/*************************/
+.rain {
+  background-image: url(https://cdn.pixabay.com/photo/2021/05/10/14/48/rain-6243559_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.clouds {
+  background-image: url(https://cdn.pixabay.com/photo/2015/10/16/22/46/sunset-991945_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.clear {
+  background-image: url(https://cdn.pixabay.com/photo/2017/04/05/15/35/nature-2205315_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.snow {
+  background-image: url(https://cdn.pixabay.com/photo/2013/10/27/17/14/snowfall-201496_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mist {
+  background-image: url(https://cdn.pixabay.com/photo/2014/12/17/18/40/fog-571786_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.fog {
+  background-image: url(https://cdn.pixabay.com/photo/2014/12/17/18/40/fog-571786_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.drizzle {
+  background-image: url(https://cdn.pixabay.com/photo/2019/10/30/21/47/gods-gift-4590626_960_720.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+/*** END ***/
+
+/***********************/
+/** Weather Container **/
+/***********************/
+
+.weather_container {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+/*** END ***/
+
+/****************/
+/** City Cards **/
+/****************/
+
+.city_form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input_ville {
+  display: inline;
+  max-width: 250px;
+  appearance: none;
+  background: transparent;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 1px 1px 7px var(--light_dark);
+  text-align: center;
+  font-family: var(--sub_title);
+  font-size: clamp(2rem, 5%, 3rem);
+  color: var(--white);
+}
+.submit_ville {
+  display: inline;
+  max-width: 200px;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 1px 1px 7px var(--light_dark);
+}
+#display {
+  width: clamp(300px, 30%, 20%);
+  margin-top: 30px;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: 1px 1px 7px var(--light_dark);
+}
+#display h2 {
+  font-family: var(--title);
+  font-size: clamp(2rem, 3%, 5.5rem);
+  text-align: center;
+  color: var(--white);
+}
+#conditions {
+  font-family: var(--text);
+  font-size: clamp(2rem, 5%, 3.5rem);
+  color: red;
+}
+
+#temperature {
+  font-family: var(--sub_title);
+  font-size: clamp(2rem, 5%, 5rem);
+  color: var(--grey);
+}
+#temperature span {
+  font-family: var(--sub_title);
+  font-size: clamp(2rem, 5%, 5rem);
+  color: var(--white);
+}
+#sunrise {
+  font-family: var(--sub_title);
+  font-size: clamp(2rem, 5%, 5rem);
+  color: var(--grey);
+}
+#sunrise span {
+  font-family: var(--sub_title);
+  font-size: clamp(2rem, 5%, 5rem);
+  color: var(--white);
+}
+
+#humidity {
+  font-family: var(--sub_title);
+  font-size: clamp(2rem, 5%, 5rem);
+  color: var(--grey);
+}
+#humidity span {
+  font-family: var(--sub_title);
+  font-size: clamp(2rem, 5%, 5rem);
+  color: var(--white);
+}
+/*** END ***/
+
+/************/
+/** Footer **/
+/************/
+footer {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+}
