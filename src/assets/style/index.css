@@ -1,3 +1,6 @@
+/***********/
+/** Reset **/
+/***********/
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +13,7 @@
   --dark: #0c0c0c;
   --light_dark: #000000bb;
   --grey: rgb(42, 42, 42);
+  --light_blue: #04acf4;
   --white: #ebebeb;
 
   /* fonts */
@@ -44,7 +48,7 @@ body::-webkit-scrollbar-corner {
 }
 
 h1 {
-  color: var(--corail);
+  /* color: var(--corail); */
   font-size: clamp(3rem, 5vw, 5rem);
   text-align: center;
 }
@@ -55,24 +59,23 @@ h1 {
 
 h1 span {
   font-family: var(--title);
-  color: rgb(4, 172, 244);
+  color: var(--light_blue);
 }
 
 #page {
   min-height: calc(100vh - 50px);
-  /* background: green; */
   padding-top: 50px;
 }
 .footer_p {
   text-align: center;
   font-size: clamp(1.4rem, 3vw, 2rem);
   color: var(--dark);
-  /* background: grey; */
 }
 .footer_p a {
   font-family: var(--sub_title);
   color: var(--corail);
 }
+
 /*************************/
 /** Weather Backgrounds **/
 /*************************/
@@ -117,7 +120,7 @@ h1 span {
   background-size: cover;
   background-position: center;
 }
-/*** END ***/
+/*** End Weather Backgrounds ***/
 
 /***********************/
 /** Weather Container **/
@@ -131,12 +134,24 @@ h1 span {
   align-items: center;
   gap: 20px;
 }
-/*** END ***/
+/*** END Weather Container ***/
 
 /****************/
-/** City Cards **/
+/** City Display **/
 /****************/
 
+#display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: clamp(300px, 30%, 20%);
+  margin-top: 30px;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: 1px 1px 7px var(--light_dark);
+}
 .city_form {
   display: flex;
   flex-wrap: wrap;
@@ -155,22 +170,19 @@ h1 span {
   box-shadow: 1px 1px 7px var(--light_dark);
   text-align: center;
   font-family: var(--sub_title);
-  font-size: clamp(2rem, 5%, 3rem);
+  font-size: clamp(2.5rem, 5%, 4rem);
   color: var(--white);
 }
 .submit_ville {
+  font-family: var(--sub_title);
+  font-size: clamp(2.5rem, 5%, 4rem);
   display: inline;
   max-width: 200px;
   padding: 1rem 2rem;
   border-radius: 4px;
   border: none;
-  box-shadow: 1px 1px 7px var(--light_dark);
-}
-#display {
-  width: clamp(300px, 30%, 20%);
-  margin-top: 30px;
-  padding: 1rem 1.5rem;
-  border-radius: 4px;
+  color: var(--white);
+  background: transparent;
   box-shadow: 1px 1px 7px var(--light_dark);
 }
 #display h2 {
@@ -182,6 +194,7 @@ h1 span {
 #conditions {
   font-family: var(--text);
   font-size: clamp(2rem, 5%, 3.5rem);
+  text-align: center;
   color: red;
 }
 
@@ -216,7 +229,7 @@ h1 span {
   font-size: clamp(2rem, 5%, 5rem);
   color: var(--white);
 }
-/*** END ***/
+/*** End City Display ***/
 
 /************/
 /** Footer **/

@@ -12,6 +12,7 @@ function Meteo() {
     e.preventDefault();
     setCity(e.target[0].value);
   };
+
   const [weather, setWeather] = useState();
   const [city, setCity] = useState();
 
@@ -31,6 +32,8 @@ function Meteo() {
       const response = await axios.request(options);
       setWeather(response.data);
       console.log(response.data);
+      // const date = response.forecasts[0];
+      // console.log(date);
     };
     fetchWeather();
   }, [city]);
@@ -67,12 +70,22 @@ function Meteo() {
             )}
             {weather && (
               <p id="humidity">
-                💧 humidity :{" "}
+                <span>💧</span> humidity :{" "}
                 <span>{weather.current_observation.atmosphere.humidity}%</span>
               </p>
             )}
           </div>
         </div>
+        <div id="forecasts">
+          {weather && (
+            <p>
+              {weather.forecasts[0].day} {weather.forecasts[0].date}
+              {weather.forecasts[0].high} {weather.forecasts[0].low}{" "}
+              {weather.forecasts[0].text}
+            </p>
+          )}
+        </div>
+
         <form className="city_form" onSubmit={(e) => handleSubmit(e)}>
           <input
             className="input_ville"

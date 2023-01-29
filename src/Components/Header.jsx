@@ -9,7 +9,7 @@ export default function Header() {
           src="./public/logo/small_cloud_logo.png"
           alt="logo de l'application - Un nuage"
         />
-        <span>My Weather App</span>
+        <span>MyWeatherApp</span>
       </h1>
     </header>
   );
